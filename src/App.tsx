@@ -1,6 +1,6 @@
 import "./App.css";
 import { HomePage } from "./Pages/Home";
-import background from "./assets/last.png";
+import background from "./assets/newbg.png";
 
 function App() {
   return (
@@ -9,7 +9,10 @@ function App() {
       style={{ position: "relative", width: "100%", height: "100vh" }}
     >
       {/* Background */}
-      <div style={{ position: "fixed", inset: 0, zIndex: 0 }} className="bg-blend-overlay">
+      <div
+        style={{ position: "fixed", inset: 0, zIndex: 0 }}
+        className="bg-blend-overlay"
+      >
         <img
           src={background}
           alt="Background"
