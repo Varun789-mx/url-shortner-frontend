@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import "./App.css";
 import { HomePage } from "./Pages/Home";
-// import background from "./assets/newbg.png";
-import Threads from "./components/Threads";
+import background from "./assets/newbg.png";
+// import Threads from "./components/Threads";
 
 
 function App() {
@@ -21,12 +21,12 @@ function App() {
         style={{ position: "fixed", inset: 0, zIndex: 0 }}
         className="bg-blend-overlay"
       >
-        {/* <img
+        <img
           src={background}
           alt="Background"
           className="w-full h-full object-cover"
-        /> */}
-        <Threads enableMouseInteraction />
+        />
+        {/* <Threads enableMouseInteraction /> */}
       </div>
 
       {/* Foreground */}
