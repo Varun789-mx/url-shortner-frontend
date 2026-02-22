@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./App.css";
 import { HomePage } from "./Pages/Home";
 import background from "./assets/newbg.png";
@@ -6,15 +5,11 @@ import background from "./assets/newbg.png";
 
 
 function App() {
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}`, {
-      credentials: "include"
-    })
-  }, [])
+
   return (
     <div
       className="bg-black"
-      style={{ position: "relative", width: "100%", height: "100vh" }}
+      style={{ position: "relative", width: "100%", height: "100%" }}
     >
       {/* Background */}
       <div
