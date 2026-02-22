@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./App.css";
 import { HomePage } from "./Pages/Home";
-import background from "./assets/newbg.png";
+// import background from "./assets/newbg.png";
 import Threads from "./components/Threads";
 
 
