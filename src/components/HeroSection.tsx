@@ -1,4 +1,4 @@
-import { Copy, Link } from "lucide-react";
+import { Check, Copy, Link } from "lucide-react";
 import {
     Table,
     TableBody,
@@ -9,13 +9,29 @@ import {
     TableHeader,
     TableRow,
 } from "./Table";
-import React from "react";
+import React, { useCallback, useState } from "react";
 import axios from "axios";
+import { TableView } from "./Tab";
 
 export const HeroSection = () => {
     const [inputValue, setInputValue] = React.useState("");
     const [shortUrl, setShortUrl] = React.useState("");
+    const [copied, setcopied] = useState(false);
+    const [copyId, setCopyId] = useState(0);
+    const [textoCopy, setTextToCopy] = useState("");
 
+    const HandleCopy = useCallback(async () => {
+        try {
+            await navigator.clipboard.writeText(textoCopy);
+            setcopied(true);
+            setTimeout(() => {
+                setcopied(false);
+                setCopyId(0);
+            }, 2000);
+        } catch (error) {
+            console.log("failed to copy text", error);
+        }
+    }, [])
     const HandleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
     };
@@ -35,12 +51,14 @@ export const HeroSection = () => {
     };
     const invoices = [
         {
+            id: 1,
             invoice: "2021-09-01",
             paymentStatus: "https://example.com/short-url",
             totalAmount: "412",
             paymentMethod: "https://example.com/short-url",
         },
         {
+            id: 2,
             invoice: "2025-09-01",
             paymentStatus: "https://example.com/short-url2",
             totalAmount: "15",
@@ -89,13 +107,13 @@ export const HeroSection = () => {
                         <p className="text-purple-400">{shortUrl}</p>
                     </div>
                 )}
-                <Table>
+                {/* <Table>
                     <TableCaption>A list of your all shortened links</TableCaption>
                     <TableHeader>
                         <TableRow>
-                            <TableHead className="w-25">Date</TableHead>
-                            <TableHead>Short Url</TableHead>
-                            <TableHead>Original Url</TableHead>
+                            <TableHead className="w-25 text-gray-200">Date</TableHead>
+                            <TableHead className=" w-25 text-gray-200">Short Url</TableHead>
+                            <TableHead className="w-25 text-gray">Original Url</TableHead>
                             <TableHead className="text-right">Clicks</TableHead>
                         </TableRow>
                     </TableHeader>
@@ -103,7 +121,11 @@ export const HeroSection = () => {
                         {invoices.map((invoice) => (
                             <TableRow key={invoice.invoice}>
                                 <TableCell className="font-medium text-gray-300">{invoice.invoice}</TableCell>
-                                <TableCell className="text-gray-300 gap-2 flex justify-evenly ">{invoice.paymentStatus} <Copy className="h-5 w-5" /></TableCell>
+                                <TableCell className="text-gray-300 gap-2 flex justify-evenly ">{invoice.paymentStatus}  <button onClick={() => {
+                                    setTextToCopy(invoice.paymentStatus);
+                                    setCopyId(invoice.id);
+                                    HandleCopy();
+                                }}>{copyId === invoice.id ? "" : copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}</button></TableCell>
                                 <TableCell className="text-gray-300">{invoice.paymentMethod}</TableCell>
                                 <TableCell className="text-right text-gray-300">
                                     {invoice.totalAmount}
@@ -112,7 +134,8 @@ export const HeroSection = () => {
                         ))}
                     </TableBody>
                     <TableFooter></TableFooter>
-                </Table>
+                </Table> */}
+                <TableView/>
             </div>
         </div>
     );
