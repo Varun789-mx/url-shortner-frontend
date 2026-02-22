@@ -1,8 +1,14 @@
+import { useEffect } from "react";
 import "./App.css";
 import { HomePage } from "./Pages/Home";
 import background from "./assets/newbg.png";
 
 function App() {
+  useEffect(() => {
+    fetch('http://localhost:5000/', {
+      credentials: "include"
+    })
+  }, [])
   return (
     <div
       className="bg-black"
