@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import "./App.css";
 import { HomePage } from "./Pages/Home";
 import background from "./assets/newbg.png";
+import Threads from "./components/Threads";
+
 
 function App() {
   useEffect(() => {
-    fetch('http://localhost:5000/', {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}`, {
       credentials: "include"
     })
   }, [])
@@ -19,11 +21,12 @@ function App() {
         style={{ position: "fixed", inset: 0, zIndex: 0 }}
         className="bg-blend-overlay"
       >
-        <img
+        {/* <img
           src={background}
           alt="Background"
           className="w-full h-full object-cover"
-        />
+        /> */}
+        <Threads enableMouseInteraction />
       </div>
 
       {/* Foreground */}
