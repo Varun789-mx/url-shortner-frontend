@@ -50,7 +50,7 @@ export const TableView = () => {
   return (
     <>
       <div className="w-full mt-6 overflow-x-auto rounded-xl border border-white/10 backdrop-blur-sm">
-        {urlarray.length > 0 ? (
+        {urlarray.length && urlarray.length > 0 ? (
           <table className="w-full text-sm text-left">
             <thead>
               <tr className="border-b border-white/10 text-gray-400 text-xs uppercase tracking-widest">
