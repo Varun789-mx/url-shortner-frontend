@@ -38,7 +38,7 @@ export const HeroSection = () => {
   return (
     <div className="flex justify-center  sm:w-full p-1 py-3">
       <div className="flex justify-center gap-5 flex-col items-center align-middle">
-        <h2 className="font-bold  text-4xl md:text-5xl text-center p-4 text-purple-500">
+        <h2 className="font-bold w-3/4  md:w-full text-4xl md:text-5xl text-center p-4 text-purple-500">
           Shorten Your Loooong Links
         </h2>
         <p className="text-gray-500  p-2 w-3/4 font-semibold text-xl text-pretty text-center">
@@ -52,7 +52,7 @@ export const HeroSection = () => {
                 rounded-4xl outline-none focus-within:ring-1
                 focus-within:ring-purple-500 transition-all duration-200 ease-in-out"
         >
-          <div className="p-4 h-10 w-full md:w-7 absolute left-2 text-white top-0">
+          <div className="p-4 h-10 w-7 absolute left-2 text-white top-0">
             {" "}
             <Link />
           </div>
@@ -70,11 +70,11 @@ export const HeroSection = () => {
           </button>
         </div>
 
-        {shortUrl && (
-          <div className="w-full bg-gray-900 text-white p-4 rounded-2xl">
-            <p className="font-bold text-lg">Short URL:</p>
+        {!shortUrl && (
+          <div className="w-3/4  bg-gray-900 text-white p-4 rounded-2xl">
+            <p className="font-bold text-md">Short URL:</p>
             <div className="flex gap-4">
-              <p className="text-purple-400">{shortUrl}</p>{" "}
+              <a className="text-purple-400">https://tf86dhgc-5000.inc1.devtunnels.ms//abc123</a>{" "}
               <button
                 onClick={() => handleCopy(shortUrl)}
                 title="Copy link"
@@ -98,7 +98,8 @@ export const HeroSection = () => {
           </div>
         )}
         <br />
-        <TableView />
+        <div className="w-95 h-full md:w-full "> <TableView /></div>
+       
       </div>
     </div>
   );

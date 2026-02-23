@@ -47,22 +47,79 @@ export const TableView = () => {
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
   };
-
+ const TestUrls: Urls[] = [
+  {
+    id: 1,
+    original_url: "https://google.com",
+    short_url: "abc123",
+    clicks: 12,
+    timeStamp: new Date("2026-02-23T17:25:55.301Z"),
+  },
+  {
+    id: 2,
+    original_url: "https://github.com",
+    short_url: "gh456",
+    clicks: 5,
+    timeStamp: new Date("2026-02-22T12:10:30.000Z"),
+  },
+  {
+    id: 3,
+    original_url: "https://stackoverflow.com",
+    short_url: "so789",
+    clicks: 27,
+    timeStamp: new Date(),
+  },
+  {
+    id: 4,
+    original_url: "https://stackoverflow.com",
+    short_url: "so789",
+    clicks: 27,
+    timeStamp: new Date(),
+  },
+  {
+    id: 5,
+    original_url: "https://stackoverflow.com",
+    short_url: "so789",
+    clicks: 27,
+    timeStamp: new Date(),
+  },
+   {
+    id: 5,
+    original_url: "https://stackoverflow.com",
+    short_url: "so789",
+    clicks: 27,
+    timeStamp: new Date(),
+  },
+   {
+    id: 6,
+    original_url: "https://stackoverflow.com",
+    short_url: "so789",
+    clicks: 27,
+    timeStamp: new Date(),
+  },
+   {
+    id: 7,
+    original_url: "https://stackoverflow.com",
+    short_url: "so789",
+    clicks: 27,
+    timeStamp: new Date(),
+  }
+];
   return (
     <>
       <div className="w-full mt-6 overflow-x-auto rounded-xl border border-white/10 backdrop-blur-sm">
-        {urlarray.length > 0 ? (
+        {TestUrls.length > 0 ? (
           <table className="w-full text-sm text-left">
             <thead>
               <tr className="border-b border-white/10 text-gray-400 text-xs uppercase tracking-widest">
                 <th className="px-6 py-4 font-medium">Date</th>
                 <th className="px-6 py-4 font-medium">Shorten URL</th>
                 <th className="px-6 py-4 font-medium">Original URL</th>
-                <th className="px-6 py-4 font-medium text-center">Clicks</th>
+                <th className="px6 py-4 font-medium text-center">Clicks</th>
               </tr>
             </thead>
             <tbody>
-              {urlarray.map((row: Urls) => (
+              {TestUrls.map((row: Urls) => (
                 <tr
                   key={row.id}
                   className="border-b border-white/5 hover:bg-white/5 transition-colors duration-200 group"
@@ -83,11 +140,10 @@ export const TableView = () => {
                       <button
                         onClick={() => handleCopy(row.id, row.short_url)}
                         title="Copy link"
-                        className={`shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium border transition-all duration-200 ${
-                          copiedId === row.id
-                            ? "bg-purple-600/40 border-purple-400/60 text-purple-200"
-                            : "bg-white/5 border-white/10 text-gray-400 hover:bg-purple-600/20 hover:border-purple-500/40 hover:text-purple-300"
-                        }`}
+                        className={`shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium border transition-all duration-200 ${copiedId === row.id
+                          ? "bg-purple-600/40 border-purple-400/60 text-purple-200"
+                          : "bg-white/5 border-white/10 text-gray-400 hover:bg-purple-600/20 hover:border-purple-500/40 hover:text-purple-300"
+                          }`}
                       >
                         {copiedId === row.id ? (
                           <>
