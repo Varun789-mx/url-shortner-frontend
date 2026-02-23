@@ -2,17 +2,36 @@ import { ArrowRight, Check, Copy, Link } from "lucide-react";
 import React, { useState } from "react";
 import axios from "axios";
 import { TableView } from "./Tab";
+import toast from "react-hot-toast";
 
 export const HeroSection = () => {
   const [inputValue, setInputValue] = React.useState("");
   const [shortUrl, setShortUrl] = React.useState("");
   const [copied, setcopied] = useState(false);
 
+function isValidUrl(input:string) {
+  try {
+    new URL(input);
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
+
   const HandleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
   const HandleSubmit = async () => {
     console.log(inputValue);
+    if(inputValue === "") { 
+      toast.error("Invalid-url")
+      return;
+    }
+    if(!isValidUrl(inputValue)) { 
+      toast.error("Incorrect url, Please Enter a valid url")
+      return;
+    }
+    
     try {
       const result = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/api/create`,

@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import "./App.css";
 import { HomePage } from "./Pages/Home";
 import background from "./assets/newbg.png";
@@ -26,6 +27,7 @@ function App() {
 
       {/* Foreground */}
       <div style={{ position: "relative", zIndex: 1 }}>
+        <Toaster/>
         <HomePage />
       </div>
     </div>

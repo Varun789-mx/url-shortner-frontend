@@ -42,7 +42,7 @@ export const TableView = () => {
     GetLinks();
     const intervals = setInterval(() => {
       GetLinks();
-    }, 5000);
+    }, 10000);
     return () => clearInterval(intervals);
 
   }, []);
