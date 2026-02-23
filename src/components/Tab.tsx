@@ -40,7 +40,12 @@ export const TableView = () => {
     // const Data = JSON.parse(storedUrls || "");
     // seturlarray(Data);
     GetLinks();
-  }, [urlarray]);
+    const intervals = setInterval(() => {
+      GetLinks();
+    }, 5000);
+    return () => clearInterval(intervals);
+
+  }, []);
 
   const handleCopy = (id: number, url: string) => {
     navigator.clipboard.writeText(`${import.meta.env.VITE_BACKEND_URL}/${url}`);
