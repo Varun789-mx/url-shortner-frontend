@@ -70,11 +70,11 @@ export const HeroSection = () => {
           </button>
         </div>
 
-        {!shortUrl && (
+        {shortUrl && (
           <div className="w-3/4  bg-gray-900 text-white p-4 rounded-2xl">
             <p className="font-bold text-md">Short URL:</p>
             <div className="flex gap-4">
-              <a className="text-purple-400">https://tf86dhgc-5000.inc1.devtunnels.ms//abc123</a>{" "}
+              <a className="text-purple-400">{shortUrl}</a>{" "}
               <button
                 onClick={() => handleCopy(shortUrl)}
                 title="Copy link"

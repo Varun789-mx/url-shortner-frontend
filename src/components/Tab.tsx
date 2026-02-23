@@ -47,68 +47,10 @@ export const TableView = () => {
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
   };
- const TestUrls: Urls[] = [
-  {
-    id: 1,
-    original_url: "https://google.com",
-    short_url: "abc123",
-    clicks: 12,
-    timeStamp: new Date("2026-02-23T17:25:55.301Z"),
-  },
-  {
-    id: 2,
-    original_url: "https://github.com",
-    short_url: "gh456",
-    clicks: 5,
-    timeStamp: new Date("2026-02-22T12:10:30.000Z"),
-  },
-  {
-    id: 3,
-    original_url: "https://stackoverflow.com",
-    short_url: "so789",
-    clicks: 27,
-    timeStamp: new Date(),
-  },
-  {
-    id: 4,
-    original_url: "https://stackoverflow.com",
-    short_url: "so789",
-    clicks: 27,
-    timeStamp: new Date(),
-  },
-  {
-    id: 5,
-    original_url: "https://stackoverflow.com",
-    short_url: "so789",
-    clicks: 27,
-    timeStamp: new Date(),
-  },
-   {
-    id: 5,
-    original_url: "https://stackoverflow.com",
-    short_url: "so789",
-    clicks: 27,
-    timeStamp: new Date(),
-  },
-   {
-    id: 6,
-    original_url: "https://stackoverflow.com",
-    short_url: "so789",
-    clicks: 27,
-    timeStamp: new Date(),
-  },
-   {
-    id: 7,
-    original_url: "https://stackoverflow.com",
-    short_url: "so789",
-    clicks: 27,
-    timeStamp: new Date(),
-  }
-];
   return (
     <>
       <div className="w-full mt-6 overflow-x-auto rounded-xl border border-white/10 backdrop-blur-sm">
-        {TestUrls.length > 0 ? (
+        {urlarray.length > 0 ? (
           <table className="w-full text-sm text-left">
             <thead>
               <tr className="border-b border-white/10 text-gray-400 text-xs uppercase tracking-widest">
@@ -119,7 +61,7 @@ export const TableView = () => {
               </tr>
             </thead>
             <tbody>
-              {TestUrls.map((row: Urls) => (
+              {urlarray.map((row: Urls) => (
                 <tr
                   key={row.id}
                   className="border-b border-white/5 hover:bg-white/5 transition-colors duration-200 group"
