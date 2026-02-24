@@ -34,7 +34,7 @@ Follow these steps in order and you'll have the app running locally in under a m
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/your-org/shrinkly-frontend.git
+git clone https://github.com/varun789-mx/shrinkly-frontend.git
 cd shrinkly-frontend
 ```
 
