@@ -1,4 +1,4 @@
-# 🔗 URL Shortener — Frontend
+# 🔗 Shrinkly — Frontend
 
 A clean, fast URL shortener UI built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**. Paste a long URL, hit a button, and get a short link back instantly.
 
