@@ -34,8 +34,8 @@ Follow these steps in order and you'll have the app running locally in under a m
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/your-org/url-shortener-frontend.git
-cd url-shortener-frontend
+git clone https://github.com/your-org/shrinkly-frontend.git
+cd shrinkly-frontend
 ```
 
 **2. Install dependencies**
