@@ -53,6 +53,14 @@ Then open `.env` and fill in your values (see [Environment Variables](#environme
 ```bash
 npm run dev
 ```
+**4, ScreenShots 
+<img width="1916" height="939" alt="image" src="https://github.com/user-attachments/assets/f481194d-dd87-47e6-be95-a3d209760eb8" />
+
+The table shows the analytics of every link.
+
+<img width="909" height="339" alt="image" src="https://github.com/user-attachments/assets/b63f977b-1fda-41e8-9f31-e8bd0ae9ad0f" />
+
+
 
 The app will be running at **http://localhost:5173** — open it in your browser and you're good to go! 🎉
 
