@@ -3,6 +3,14 @@
 A clean, fast URL shortener UI built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**. Paste a long URL, hit a button, and get a short link back instantly.
 
 ---
+## ✨ Features
+
+- 🔗 **Instant URL Shortening** - Paste long URLs and get short links
+- 📊 **Analytics Dashboard** - View all your shortened URLs with click counts
+- 📋 **One-Click Copy** - Copy shortened URLs instantly
+- 🍪 **Cookie-Based Tracking** - Your links saved automatically (no signup needed)
+- 📱 **Responsive Design** - Works on all devices
+- ⚡ **Fast & Modern** - Built with Vite for instant loads
 
 ## 📋 Table of Contents
 
