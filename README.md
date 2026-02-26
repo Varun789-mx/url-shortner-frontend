@@ -101,7 +101,7 @@ Copy `.env.example` to `.env` and set the following:
 
 ```env
 # The base URL of your backend API
-VITE_API_BASE_URL=http://localhost:8000
+VITE_API_BASE_URL=http://localhost:5000
 ```
 
 > **Why `VITE_` prefix?** Vite only exposes environment variables that start with `VITE_` to the browser for security. Any variable without this prefix stays server-side only.
