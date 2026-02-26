@@ -71,7 +71,7 @@ export const TableView = () => {
                   key={row.id}
                   className="border-b border-white/5 hover:bg-white/5 transition-colors duration-200 group"
                 >
-                  <td className="px-6 py-4 text-gray-400 whitespace-nowrap">
+                  <td className="px-6 py-4 text-gray-300 whitespace-nowrap">
                     {new Date(row.timeStamp).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4">
@@ -107,7 +107,7 @@ export const TableView = () => {
                   <td className="px-6 py-4">
                     <a
                       href={row.original_url}
-                      className="text-gray-300 hover:text-white transition-colors duration-150 truncate max-w-65 block"
+                      className="text-gray-200 hover:text-white transition-colors duration-150 truncate max-w-65 block"
                       target="_blank"
                       rel="noreferrer"
                     >
